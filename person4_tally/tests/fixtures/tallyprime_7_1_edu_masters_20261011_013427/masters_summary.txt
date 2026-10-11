@@ -1,0 +1,22 @@
+verdict: CAPTURED_CLEAN
+This is a quick check; the request_*.xml / response_*.xml files are the evidence.
+requested_company: FinLedger Test Company
+folder: <redacted: local Windows path>
+contains_real_data: yes (ledger names and groups of this company)
+file: request_01_companies.xml bytes=512 sha256=b264108ccd79c623c3260048fb8d6d0d3595c333462f25367df048b5c4c5617c
+file: response_01_companies.xml bytes=1774 sha256=227d7f9294638bafdff57a98c4a916831894dc982c3a50451f06a0c0fea870a0
+company_guid: 7a5f42d4-ec1d-4aab-9992-e2e217bcb773
+companies_loaded: 1
+file: request_02_ledgers.xml bytes=560 sha256=bb78ddd2fdb243b0aed953e61ca2530850e7731b75a128388bd1831489f4e3e3
+file: response_02_ledgers.xml bytes=3115 sha256=75707dacbebfb15148d6900846381c0244a7a9c79c3b60ff6cf12430b3d33605
+file: request_03_companies_after.xml bytes=512 sha256=b264108ccd79c623c3260048fb8d6d0d3595c333462f25367df048b5c4c5617c
+file: response_03_companies_after.xml bytes=1774 sha256=227d7f9294638bafdff57a98c4a916831894dc982c3a50451f06a0c0fea870a0
+ledger_reply_bom: none
+ledger_reply_has_char_ref_4: True
+ledger_reply_state: ok
+collections: 1
+row_tags: LEDGER=4
+ledger_rows: 4 own_company_guid: 4 foreign_guid: 0 malformed_guid: 0
+missing_name: 0 name_attr_child_disagree: 0 missing_parent: 0 duplicate_names_ignoring_case: 0
+distinct_parent_groups: 4
+The ledger reply matches the shape FinLedger expects (still to be confirmed by the Python parser).

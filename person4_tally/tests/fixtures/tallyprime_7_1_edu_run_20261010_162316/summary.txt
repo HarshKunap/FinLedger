@@ -1,0 +1,141 @@
+FinLedger Tally capture summary (quick look; the response_*.xml files are the evidence)
+run_folder: captures\run_20261010_162316
+started: 20261010_162316   powershell: 5.1.26100.9444   os: Microsoft Windows NT 10.0.26200.0
+company: FinLedger Test Company   document_id: 9d4f3d5d-499e-41db-b510-e98348e5b503   date: 20260401   other_date: 20260402   fy_window: 20260401-20270331   port: 9000
+note: new amount typed by user: 1180
+note: user confirmed the amount edit
+note: values_GUID before=[7a5f42d4-ec1d-4aab-9992-e2e217bcb773-00000001] after=[7a5f42d4-ec1d-4aab-9992-e2e217bcb773-00000001] -> same
+note: values_MASTERID before=[ 1] after=[ 1] -> same
+note: values_ALTERID before=[ 3] after=[ 4] -> CHANGED
+note: values_AMOUNT before=[1180.00 | 1180.00 | -1180.00] after=[2000.00 | 2000.00 | -2000.00] -> CHANGED
+
+label                    01_companies
+window                   -
+bytes                    1775
+sha256                   EA98A1BAA3EC311FA78CF2F643EEF25F1EC87D939BA2BE589676586EDBD27F07
+http_status              200
+content_type             text/xml; charset=utf-8
+encoding                 UTF-8 (no BOM)
+voucher_tags             1
+object_tags              0
+company_tags             2
+lineerror                0
+exact_marker_hits        0
+uuid_hits                0
+values_GUID              7a5f42d4-ec1d-4aab-9992-e2e217bcb773
+values_NAME              FinLedger Test Company
+
+label                    02_day_before_edit
+window                   20260401-20260401
+bytes                    3998
+sha256                   8C2CAC008B5FF190EB1D435F8373BDCF6E34BAC5091C9A58F7865F135A90EB79
+http_status              200
+content_type             text/xml; charset=utf-8
+encoding                 UTF-8 (no BOM)
+voucher_tags             2
+object_tags              0
+company_tags             1
+lineerror                0
+exact_marker_hits        1
+uuid_hits                1
+values_GUID              7a5f42d4-ec1d-4aab-9992-e2e217bcb773-00000001
+values_MASTERID           1
+values_ALTERID            3
+values_DATE              20260401
+values_VOUCHERTYPENAME   Purchase
+values_VOUCHERNUMBER     1
+values_PARTYLEDGERNAME   FinLedger Test Vendor
+values_REFERENCE         TEST-INV-001
+values_AMOUNT            1180.00 | 1180.00 | -1180.00
+
+label                    03_fy_before_edit
+window                   20260401-20270331
+bytes                    3998
+sha256                   8C2CAC008B5FF190EB1D435F8373BDCF6E34BAC5091C9A58F7865F135A90EB79
+http_status              200
+content_type             text/xml; charset=utf-8
+encoding                 UTF-8 (no BOM)
+voucher_tags             2
+object_tags              0
+company_tags             1
+lineerror                0
+exact_marker_hits        1
+uuid_hits                1
+values_GUID              7a5f42d4-ec1d-4aab-9992-e2e217bcb773-00000001
+values_MASTERID           1
+values_ALTERID            3
+values_DATE              20260401
+values_VOUCHERTYPENAME   Purchase
+values_VOUCHERNUMBER     1
+values_PARTYLEDGERNAME   FinLedger Test Vendor
+values_REFERENCE         TEST-INV-001
+values_AMOUNT            1180.00 | 1180.00 | -1180.00
+
+label                    04_other_day
+window                   20260402-20260402
+bytes                    3998
+sha256                   8C2CAC008B5FF190EB1D435F8373BDCF6E34BAC5091C9A58F7865F135A90EB79
+http_status              200
+content_type             text/xml; charset=utf-8
+encoding                 UTF-8 (no BOM)
+voucher_tags             2
+object_tags              0
+company_tags             1
+lineerror                0
+exact_marker_hits        1
+uuid_hits                1
+values_GUID              7a5f42d4-ec1d-4aab-9992-e2e217bcb773-00000001
+values_MASTERID           1
+values_ALTERID            3
+values_DATE              20260401
+values_VOUCHERTYPENAME   Purchase
+values_VOUCHERNUMBER     1
+values_PARTYLEDGERNAME   FinLedger Test Vendor
+values_REFERENCE         TEST-INV-001
+values_AMOUNT            1180.00 | 1180.00 | -1180.00
+
+label                    05_day_after_edit
+window                   20260401-20260401
+bytes                    3999
+sha256                   E89DDD0BBAC898F89F33254D0949B2AAF35ADC9B8894B9A1C04CA22D26B4EB77
+http_status              200
+content_type             text/xml; charset=utf-8
+encoding                 UTF-8 (no BOM)
+voucher_tags             2
+object_tags              0
+company_tags             1
+lineerror                0
+exact_marker_hits        1
+uuid_hits                1
+values_GUID              7a5f42d4-ec1d-4aab-9992-e2e217bcb773-00000001
+values_MASTERID           1
+values_ALTERID            4
+values_DATE              20260401
+values_VOUCHERTYPENAME   Purchase
+values_VOUCHERNUMBER     1
+values_PARTYLEDGERNAME   FinLedger Test Vendor
+values_REFERENCE         TEST-INV-001
+values_AMOUNT            2000.00 | 2000.00 | -2000.00
+
+label                    06_fy_after_edit
+window                   20260401-20270331
+bytes                    3999
+sha256                   E89DDD0BBAC898F89F33254D0949B2AAF35ADC9B8894B9A1C04CA22D26B4EB77
+http_status              200
+content_type             text/xml; charset=utf-8
+encoding                 UTF-8 (no BOM)
+voucher_tags             2
+object_tags              0
+company_tags             1
+lineerror                0
+exact_marker_hits        1
+uuid_hits                1
+values_GUID              7a5f42d4-ec1d-4aab-9992-e2e217bcb773-00000001
+values_MASTERID           1
+values_ALTERID            4
+values_DATE              20260401
+values_VOUCHERTYPENAME   Purchase
+values_VOUCHERNUMBER     1
+values_PARTYLEDGERNAME   FinLedger Test Vendor
+values_REFERENCE         TEST-INV-001
+values_AMOUNT            2000.00 | 2000.00 | -2000.00
