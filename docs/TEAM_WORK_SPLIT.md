@@ -6,6 +6,11 @@ service configuration and end-to-end release proofs remain unfinished.
 
 ## 1. Start here
 
+Share one assignment per person: [Friend 1 — AI](assignments/01_FRIEND_AI.md),
+[Friend 2 — Platform](assignments/02_FRIEND_PLATFORM.md),
+[Ryan — Controls and QA](assignments/03_RYAN_CONTROLS_QA.md).
+Ryan's role has the easiest starting tasks; security-sensitive changes still require review.
+
 Read [HANDOVER](../HANDOVER.md) completely, then the documents linked in your assignment.
 It remains the authority for owner decisions, hosted state and safety rules.
 

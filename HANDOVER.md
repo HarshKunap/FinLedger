@@ -226,6 +226,15 @@ every completed or WIP change. No uncommitted implementation may remain on the P
 
 ## Latest status
 
+**2026-10-17 individual assignment files:** Added three shareable Markdown briefs under
+`docs/assignments/`, linked from TEAM_WORK_SPLIT. Friend 1 owns AI, Friend 2 platform;
+Ryan is assigned controls/QA as the easiest starting role, without relaxing security review
+or owner-only policy/account responsibilities. Branch `docs/individual-team-assignments`.
+Documentation only; no local application suite rerun or new test counts claimed. Historical
+baseline remains **43 AI / 333 platform / 55 UI**, mock **3/3 + 5/5**. No hosted changes,
+credentials, model/email calls, runtime edits or Person 4 edits. Validate links/whitespace
+and require exact-commit green CI before integration. PR #35 is merged; no WIP implementation.
+
 **2026-10-17 three-person handoff:** Synced clean main to `346d98a`, including independently
 contributed Person 4 files; no edits or readiness assessment of that pack. Added
 `docs/TEAM_WORK_SPLIT.md` with three scoped assignments, shared-file ownership, owner gates,
