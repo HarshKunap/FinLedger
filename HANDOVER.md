@@ -50,6 +50,10 @@ Claude does the same in reverse when handing to you.
 
 ## Repository
 
+- **Three-contributor onboarding:** [TEAM_WORK_SPLIT.md](docs/TEAM_WORK_SPLIT.md) assigns AI,
+  platform/deployment and controls/QA ownership, dependencies and acceptance checks. Use it for friends
+  joining the project; this handover remains authoritative for decisions and hosted state.
+
 - GitHub: `ryanshaon/FinLedger`. Default branch `main` (protected by habit: changes go via PR, CI must be green).
 - Windows checkout: `C:\Users\ryans\OneDrive\Documents\Studies\Projects\FinTechShi\FinLedger_GitHub`.
 - Layout: `packages/`, `evals/`, `person1_ai_rag/` (Person 1 AI/RAG) · `person2_platform/` (API, tenancy, DB,
@@ -221,6 +225,17 @@ every completed or WIP change. No uncommitted implementation may remain on the P
 ---
 
 ## Latest status
+
+**2026-10-17 three-person handoff:** Synced clean main to `346d98a`, including independently
+contributed Person 4 files; no edits or readiness assessment of that pack. Added
+`docs/TEAM_WORK_SPLIT.md` with three scoped assignments, shared-file ownership, owner gates,
+acceptance checks and merge order. Linked it from README and this file; corrected root README's
+outdated claim that Person 4 contains architecture only. Cleanup is documentation/navigation only:
+no files, volumes, backup branches or private configuration deleted. Branch `docs/three-person-handoff`.
+No runtime edits, local suite rerun, hosted SQL/configuration, email or model calls. Historical baseline
+remains **43 AI / 333 platform / 55 UI**, mock **3/3 + 5/5**; exact PR CI results must be checked before
+integration. PR #33's provider proposal is already merged on main. No unfinished implementation added.
+Next: friends select A/B/C roles and complete the first local deliverables while owner gates stay closed.
 
 **2026-10-10 owner decisions and provider research:** Owner delegated maker and statement choices and
 asked to research AI providers. Selected per-firm non-login automation maker and statement exclusion for

@@ -11,8 +11,14 @@ Architecture baseline: 23 Sep 2026. Hard rule: extraction never posts.
 
 Shared objects: `shared/00_SHARED_CONTRACTS.md` and `shared/Shared_Contracts.pdf`.
 
-The workspace contains the implemented work for Persons 1, 2, and 3. Person 4
-remains the connector boundary and is represented by its architecture pack.
+The workspace contains the work for Persons 1–4. This handoff covers Persons 1–3 only;
+Person 4 has separately contributed connector code and is not assessed here.
+
+## Helping finish FinLedger
+
+Start with [the three-person work split](docs/TEAM_WORK_SPLIT.md): AI, platform/deployment,
+and controls/QA. Read [HANDOVER.md](HANDOVER.md) before changes. Do not rebuild completed work,
+share `.env`, or edit `person4_tally/` as part of these assignments.
 
 ## Capability status
 
@@ -21,13 +27,13 @@ remains the connector boundary and is represented by its architecture pack.
 | Person 1 | Prototype | `packages/`, `evals/` | 43 tests + deterministic fixture evaluation |
 | Person 2 | Implemented | `person2_platform/` | 333 tests |
 | Person 3 | Implemented | `person3_control_ui/` | 55 tests |
-| Person 4 | Planned | `person4_tally/` | Architecture only; no runnable connector |
+| Person 4 | Separately maintained; not assessed here | `person4_tally/` | See that pack's own evidence |
 
 `Implemented` means runnable and integration-tested. `Prototype` means runnable
 with deterministic/in-memory development adapters. `Planned` means no runtime
 implementation exists. The complete vendor-to-Tally loop is therefore not yet
 production-executable: Person 1 still needs live provider/persistent adapters,
-and Person 4 remains to be built.
+and connector release readiness is outside this P1–P3 assessment.
 
 ## Prerequisites and verification
 
@@ -89,5 +95,5 @@ consumer or a live provider; staging and production continue to reject mock AI.
 ```text
 PostgreSQL → migrations/bootstrap → Person 2 API and workers
            → Person 1 mock pipeline → Person 3 review service
-           → Person 4 connector (not implemented)
+           → Person 4 connector (separately maintained; outside this handoff)
 ```
