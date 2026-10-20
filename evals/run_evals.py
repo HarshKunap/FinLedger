@@ -128,7 +128,21 @@ def main(argv=None) -> int:
     parser.add_argument("--fixtures-dir", type=Path, default=Path(__file__).parent.parent / "packages" / "extract" / "tests" / "fixtures")
     parser.add_argument("--report", type=Path, default=Path(__file__).parent / "latest_report.md")
     parser.add_argument("--provider-mode", default=os.getenv("FINLEDGER_LLM_PROVIDER", "mock"))
+    parser.add_argument(
+        "--live-synthetic-eval",
+        action="store_true",
+        help="Opt-in synthetic live-provider benchmark (off by default; not for CI).",
+    )
     args = parser.parse_args(argv)
+    if args.provider_mode != "mock" and not args.live_synthetic_eval:
+        print(
+            "FAIL: non-mock provider mode requires --live-synthetic-eval (owner-approved account only)",
+            file=sys.stderr,
+        )
+        return 1
+    if args.live_synthetic_eval and args.provider_mode == "mock":
+        print("FAIL: --live-synthetic-eval requires a non-mock --provider-mode", file=sys.stderr)
+        return 1
     report = evaluate_goldens(args.golden_dir, args.provider_mode)
     extraction = evaluate_extraction_fixtures(args.fixtures_dir, args.provider_mode)
     args.report.write_text(render_report(report, extraction), encoding="utf-8")

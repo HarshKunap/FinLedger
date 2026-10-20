@@ -65,7 +65,17 @@ class MockProvider:
 
     def _extract(self, document_id: str, payload: dict[str, Any]) -> dict[str, Any]:
         markdown = str(payload.get("markdown", ""))
-        images = list(payload.get("page_image_paths", []))
+        image_bytes = list(payload.get("page_image_bytes", []))
+        if not markdown.strip() and image_bytes:
+            for blob in image_bytes:
+                try:
+                    decoded = blob.decode("utf-8")
+                except UnicodeDecodeError:
+                    continue
+                if decoded.strip():
+                    markdown = decoded
+                    break
+        images = []
         document_type = "debit_note" if "DEBIT NOTE" in markdown.upper() else "credit_note" if "CREDIT NOTE" in markdown.upper() else "purchase_invoice"
         total = float(self._field(markdown, "Total") or 0)
         taxable = float(self._field(markdown, "Total Taxable") or total)
