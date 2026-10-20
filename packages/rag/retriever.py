@@ -15,7 +15,7 @@ class Retriever:
         # In a real app we'd build a query string and do cosine similarity over the vector DB namespace
         # query_str = f"{gstin} {vendor_name} {' '.join(descriptions)} {hsn} {amount_band} {doc_type}"
         
-        chunks = self.indexer.store.get(namespace, [])
+        chunks = self.indexer.get_namespace_chunks(client_id)
         
         scored_chunks = []
         for c in chunks:

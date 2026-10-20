@@ -1,0 +1,33 @@
+{
+  "document_id": "doc-cn",
+  "document_type": "credit_note",
+  "vendor": {
+    "name": "Return Goods Ltd",
+    "gstin": "29CRED1234F1Z9",
+    "pan": "CRED1234F1",
+    "state": ""
+  },
+  "invoice_no": "CN-44",
+  "invoice_date": "2026-09-10",
+  "taxable": 1000.0,
+  "cgst": 90.0,
+  "sgst": 90.0,
+  "total": 1180.0,
+  "line_items": [
+    {
+      "desc": "Rebate",
+      "hsn_sac": "9983",
+      "qty": 1.0,
+      "rate": 1000.0,
+      "taxable": 1000.0,
+      "tax_rate": 18.0,
+      "tax_amount": 180.0
+    }
+  ],
+  "confidences": {
+    "invoice_no": 0.9,
+    "date": 0.9,
+    "gstin": 0.9,
+    "total": 0.9
+  }
+}
