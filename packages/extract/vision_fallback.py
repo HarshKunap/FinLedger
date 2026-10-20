@@ -1,6 +1,6 @@
 from contracts.schemas import CanonicalInvoice
 from extract.extract_worker import ExtractWorker
-from extract.failures import ExtractFailure, MISSING_EXTRACT_INPUT, VISION_PAGE_CAP
+from extract.failures import ExtractFailure, MISSING_EXTRACT_INPUT, STATEMENT_NOT_EXTRACTED, VISION_PAGE_CAP
 from extract.input_policy import DEFAULT_MAX_IMAGE_BYTES, validate_page_image_bytes
 
 
@@ -19,7 +19,11 @@ class ExtractionDispatcher:
         markdown: str,
         page_image_paths: list[str] | None = None,
         page_image_bytes: list[bytes] | None = None,
+        document_class: str = "invoice",
     ) -> CanonicalInvoice:
+        if document_class == "statement":
+            raise ExtractFailure(STATEMENT_NOT_EXTRACTED)
+
         paths = list(page_image_paths or [])
         image_bytes = list(page_image_bytes or [])
 

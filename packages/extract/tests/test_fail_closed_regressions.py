@@ -8,6 +8,7 @@ from extract.failures import (
     ExtractFailure,
     INVALID_MODEL_OUTPUT,
     MISSING_EXTRACT_INPUT,
+    STATEMENT_NOT_EXTRACTED,
     VISION_PAGE_CAP,
 )
 from extract.vision_fallback import ExtractionDispatcher
@@ -68,6 +69,19 @@ def test_vision_malformed_output_same_category():
             )
     assert exc.value.category == INVALID_MODEL_OUTPUT
     assert "still-not-json" not in str(exc.value)
+
+
+def test_statement_document_class_refuses_provider():
+    worker = ExtractWorker(UsageWriter(), ModelRouter(Settings(provider="mock")))
+    dispatcher = ExtractionDispatcher(worker, page_cap=2, image_byte_cap=10_000)
+    with pytest.raises(ExtractFailure) as exc:
+        dispatcher.extract(
+            "client-a",
+            "doc-stmt",
+            "Bank statement line 1",
+            document_class="statement",
+        )
+    assert exc.value.category == STATEMENT_NOT_EXTRACTED
 
 
 def test_bounded_images_page_and_byte_caps():
