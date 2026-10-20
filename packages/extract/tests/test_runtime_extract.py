@@ -26,10 +26,23 @@ def test_dispatcher_uses_markdown_without_images():
 
 
 def test_dispatcher_uses_capped_images_when_markdown_empty():
+    scan_markdown = "Invoice No: SCAN-01\nTotal: 100"
+    image_bytes = [scan_markdown.encode("utf-8"), scan_markdown.encode("utf-8")]
     dispatcher = ExtractionDispatcher(ExtractWorker(UsageWriter()), page_cap=2)
-    invoice = dispatcher.extract("client-a", "doc-scan", "  ", ["p1.png", "p2.png"])
+    invoice = dispatcher.extract(
+        "client-a",
+        "doc-scan",
+        "  ",
+        page_image_paths=["p1.png", "p2.png"],
+        page_image_bytes=image_bytes,
+    )
     assert invoice.document_id == "doc-scan"
     assert invoice.page_image_paths == ["p1.png", "p2.png"]
-    with pytest.raises(ValueError, match="page cap"):
-        dispatcher.extract("client-a", "doc-over", "", ["1", "2", "3"])
+    with pytest.raises(Exception, match="vision_page_cap"):
+        dispatcher.extract(
+            "client-a",
+            "doc-over",
+            "",
+            page_image_bytes=[b"x", b"y", b"z"],
+        )
 

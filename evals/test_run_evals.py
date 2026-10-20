@@ -29,5 +29,5 @@ def test_extraction_eval_runs_markdown_and_detects_output_mismatch(tmp_path):
 def test_extraction_eval_matches_real_fixture_pair():
     fixture_dir = __import__("pathlib").Path(__file__).parent.parent / "packages" / "extract" / "tests" / "fixtures"
     report = evaluate_extraction_fixtures(fixture_dir, provider_mode="mock")
-    assert report.total == 5
-    assert report.matched == 5
+    assert report.total == 6
+    assert report.matched == 6
