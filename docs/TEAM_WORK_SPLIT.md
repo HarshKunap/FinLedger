@@ -1,6 +1,11 @@
 # FinLedger: remaining work for three contributors
 
 Prepared 2026-10-17. Scope: Persons 1–3, not three new implementations.
+
+**2026-10-22 assignment update:** [Release integration](assignments/RELEASE_INTEGRATION.md)
+consolidates remaining implementation and controls/QA for its recipient. Ryan retains owner approvals
+and final independent acceptance. Previously accepted handover tasks remain with their contributor;
+coordinate PRs before coding. The role descriptions below remain background, not duplicate assignments.
 Reuse the existing code. The core platform/UI is implemented; live AI, durable AI state,
 service configuration and end-to-end release proofs remain unfinished.
 

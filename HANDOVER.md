@@ -226,6 +226,18 @@ every completed or WIP change. No uncommitted implementation may remain on the P
 
 ## Latest status
 
+**2026-10-22 consolidated release assignment:** Synced main to `cf5d2f0` (PR #37). Added
+`docs/assignments/RELEASE_INTEGRATION.md` for remaining AI runtime integration, platform integration,
+staging operations and controls/QA, including work previously assigned to Ryan. Existing friend's
+accepted migration/consumer handover stays coordinated rather than duplicated. Ryan retains account,
+policy/budget approvals, final independent acceptance and launch authority. TEAM_WORK_SPLIT links the
+updated assignment. Branch `docs/release-integration-assignment`; documentation only, no hosted changes,
+secrets, runtime edits or Person 4 edits. No local suite rerun. PR #37 CI evidence inspected this session:
+**71 AI / 333 platform / 55 UI passed**, mock **3/3 + 6/6** (run `39399420351`, October 20).
+P1 Gemini fake-transport and durable Postgres adapters now exist; older statements below saying no
+adapters exist are historical. Live transport/activation, runtime wiring and production migrations remain
+unfinished. New brief requires local link/whitespace validation and green exact-commit PR CI before merge.
+
 **2026-10-17 individual assignment files:** Added three shareable Markdown briefs under
 `docs/assignments/`, linked from TEAM_WORK_SPLIT. Friend 1 owns AI, Friend 2 platform;
 Ryan is assigned controls/QA as the easiest starting role, without relaxing security review
