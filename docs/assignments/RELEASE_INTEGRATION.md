@@ -114,19 +114,7 @@ them. Commit exact new migration SQL and obtain review before approved hosted ex
 **Acceptance:** reproducible browser/workflow tests and a release evidence report with exact
 pass/fail/skip counts, commit, environment, cleanup, unresolved blockers and rollback instructions.
 
-## 7. What remains with Ryan
-
-Ryan retains account ownership, private credential entry, AI/data-handling and hosting budget
-approvals, final independent user acceptance and the customer-release go/no-go decision.
-Request specific approvals once; do not treat implementation ownership as permission to spend,
-send invoices externally, create real invites/email or alter production.
-
-Already selected: password + TOTP; SSO deferred; non-login per-firm maker; exclude statements;
-minimized text/bounded page images under proposed controls; serve Indian and EU markets.
-Processing locations, provider/model activation, effective retention, budget and capacity remain
-owner gates. Market coverage does not itself approve cross-border transfer. Use synthetic data only.
-
-## 8. Work order and completion rules
+## 7. Work order and completion rules
 
 1. Baseline tests and overlap agreement; start local transport/control regression work.
 2. Integrate the assigned friend's reviewed schema/consumer; wire adapters and maker behavior.
