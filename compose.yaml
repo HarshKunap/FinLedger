@@ -1,4 +1,4 @@
-# Local full stack: Postgres + migrations + API + ingest worker + control UI + ClamAV.
+# Local full stack: Postgres + migrations + API + ingest and extract workers + control UI + ClamAV.
 #   docker compose up --build
 # API http://127.0.0.1:8000/healthz, control UI http://127.0.0.1:8770/healthz.
 # All secrets below are LOCAL-ONLY placeholders. Staging/production take theirs from a secret manager.
@@ -56,6 +56,14 @@ services:
   worker:
     <<: *app
     command: ["finledger-platform", "worker"]
+    healthcheck: {disable: true}
+
+  extract-worker:
+    <<: *app
+    command: ["finledger-platform", "extract-worker"]
+    environment:
+      <<: *env
+      FINLEDGER_LLM_PROVIDER: mock  # local only; ModelRouter refuses mock when FINLEDGER_ENV is staging/production
     healthcheck: {disable: true}
 
   control:

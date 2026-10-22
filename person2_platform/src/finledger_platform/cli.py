@@ -1,4 +1,4 @@
-"""finledger-platform migrate | create-firm | serve | worker | outbox-worker | isolation-check | s3-smoke"""
+"""finledger-platform migrate | create-firm | serve | worker | extract-worker | outbox-worker | isolation-check | s3-smoke"""
 from __future__ import annotations
 
 import argparse
@@ -33,6 +33,7 @@ def main(argv: list[str] | None = None) -> None:
     sv.add_argument("--host", default="127.0.0.1")
     sv.add_argument("--port", type=int, default=8000)
     sub.add_parser("worker", help="run the ingest worker")
+    sub.add_parser("extract-worker", help="run the extract worker (provider settings come from Person 1's router)")
     mail = sub.add_parser("outbox-worker", help="deliver one client's queued email replies")
     mail.add_argument("--client-id", required=True, type=UUID)
     sub.add_parser("isolation-check", help="rollback-only two-tenant RLS proof (owner DSN; writes nothing)")
@@ -66,6 +67,13 @@ def main(argv: list[str] | None = None) -> None:
 
         s = Settings()
         run_forever(make_pool(s.database_url, min_size=1, max_size=2), make_store(s), s)
+    elif args.cmd == "extract-worker":
+        from .db import make_pool
+        from .extract_worker import default_extract, run_forever
+        from .store import make_store
+
+        s = Settings()
+        run_forever(make_pool(s.database_url, min_size=1, max_size=2), make_store(s), default_extract())
     elif args.cmd == "outbox-worker":
         from .db import make_pool
         from .outbox_worker import ResendSender, run_forever
